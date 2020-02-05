@@ -20,7 +20,6 @@ apply from: '../gradle-mvn-push.gradle'
 
 android {
   compileSdkVersion gradle.compileSdkVersion
-  buildToolsVersion gradle.buildToolsVersion
 
   defaultConfig {
     minSdkVersion gradle.minSdkVersion
@@ -33,11 +32,11 @@ android {
 }
 
 dependencies {
-  compileOnly 'org.jetbrains.kotlin:kotlin-stdlib:' + kotlin_version
+  compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   compileOnly project(':library')
 
   testImplementation 'junit:junit:4.12'
-  testImplementation 'com.android.support:recyclerview-v7:' + gradle.supportLibraryVersion
+  testImplementation "androidx.recyclerview:recyclerview:${gradle.recyclerviewVersion}"
 }
 
 repositories {
